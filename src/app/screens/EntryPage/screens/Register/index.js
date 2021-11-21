@@ -45,6 +45,7 @@ export default function Register() {
           name='email'
           autoComplete='email'
           autoFocus
+          size='small'
         />
         <TextField
           variant='outlined'
@@ -56,6 +57,7 @@ export default function Register() {
           type='password'
           id='password'
           autoComplete='current-password'
+          size='small'
         />
         <FormControlLabel
           control={<Checkbox value='remember' color='primary' />}

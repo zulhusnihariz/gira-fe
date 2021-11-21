@@ -1,36 +1,19 @@
 import React from 'react'
 import clsx from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import Drawer from '@material-ui/core/Drawer'
-import Box from '@material-ui/core/Box'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import List from '@material-ui/core/List'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
-import Container from '@material-ui/core/Container'
 
-import Link from '@material-ui/core/Link'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
 import { mainListItems } from './listItems'
-
-function Copyright() {
-  return (
-    <Typography variant='body2' color='textSecondary' align='center'>
-      {'Copyright © '}
-      <Link color='inherit' href='https://mui.com/'>
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  )
-}
 
 const drawerWidth = 240
 
@@ -103,19 +86,12 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
-  paper: {
-    padding: theme.spacing(2),
-    display: 'flex',
-    overflow: 'auto',
-    flexDirection: 'column',
-    backgroundColor: 'blue',
-  },
   fixedHeight: {
     height: 240,
   },
 }))
 
-export default function Dashboard() {
+export default function NavBar() {
   const classes = useStyles()
   const [open, setOpen] = React.useState(true)
   const handleDrawerOpen = () => {
@@ -127,7 +103,6 @@ export default function Dashboard() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar position='absolute' className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
@@ -162,14 +137,6 @@ export default function Dashboard() {
         <Divider />
         <List>{mainListItems}</List>
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Container maxWidth='lg' className={classes.container}>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
-        </Container>
-      </main>
     </div>
   )
 }

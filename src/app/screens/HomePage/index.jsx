@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBar from './components/SideBar.jsx'
+import Dashboard from './components/Dashboard'
 export default class HomePage extends React.Component {
   constructor(props) {
     super(props)
@@ -14,7 +14,8 @@ export default class HomePage extends React.Component {
     return (
       <div>
         <div>
-          <SideBar />
+          {/* Dashboard components taken from MaterialUI Dashboard template */}
+          <Dashboard />
         </div>
       </div>
     )
